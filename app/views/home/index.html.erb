@@ -2,7 +2,7 @@
 <script src="//google-maps-utility-library-v3.googlecode.com/svn/tags/markerclustererplus/2.0.14/src/markerclusterer_packed.js"></script>
 <script src='//google-maps-utility-library-v3.googlecode.com/svn/tags/infobox/1.1.9/src/infobox_packed.js' type='text/javascript'></script> <!-- only if you need custom infoboxes -->
 
-<div class="container margin-top-4">
+<div class="container margin-top-2">
   <ul class="nav nav-tabs" role="tablist">
     <li role="presentation" class="active"><a href="#popular-issues" aria-controls="popular-issues" role="tab" data-toggle="tab">Popular</a></li>
     <li role="presentation"><a href="#new-issues" aria-controls="profile" role="new-issues" data-toggle="tab">New</a></li>
@@ -13,7 +13,7 @@
 
     <div class="tab-content">
       <div role="tabpanel" class="tab-pane active" id="popular-issues">
-        ...
+        <%= render 'issues' %>
       </div>
 
       <div role="tabpanel" class="tab-pane" id="new-issues">

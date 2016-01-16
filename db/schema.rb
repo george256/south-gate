@@ -14,6 +14,8 @@
 ActiveRecord::Schema.define(version: 20160116065050) do
 
   create_table "issues", force: true do |t|
+    t.string   "title"
+    t.string   "type"
     t.string   "description"
     t.string   "location_description"
     t.string   "photo"

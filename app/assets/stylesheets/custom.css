@@ -1,7 +1,8 @@
 .main-box {
   border: 1px solid #DDDDDD;
-  padding: 24px;
+  padding: 32px 32px 32px 16px;
   border-radius: 0 12px 12px 12px;
+  height: 80vh;
 }
 
 .nav-tabs {
@@ -12,6 +13,11 @@
   border-radius: 8px 8px 0 0;
   background-color: #DBEDEF;
   border-width: 1px;
+}
+
+div.issue-entry {
+  margin-bottom: 24px;
+  height: 128px;
 }
 
 .margin-top-1 {
@@ -36,4 +42,32 @@
 
 .margin-top-32 {
   margin-top: 32%;
+}
+
+.status-circle {
+  margin: 0 auto;
+  margin-top: 32px;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+}
+
+.status-yellow {
+  background-color: #F3EF11;
+}
+
+.status-green {
+  background-color: #4FBF3A;
+}
+
+.status-blue{
+  background-color: #1318BF;
+}
+
+.status-red {
+  background-color: #BF0007;
+}
+
+.status-purple {
+  background-color: #970079;
 }

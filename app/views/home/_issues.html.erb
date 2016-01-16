@@ -1,0 +1,22 @@
+<% @all_issues.each do |issue| %>
+  <div class="issue-entry row">
+    <div class="col-lg-1">
+      <%= render 'issue_status', :issue => issue %>
+    </div>
+    <div class="issue-text col-lg-9">
+      <div class="issue-title row">
+        <h4><%= issue.title %></h4>
+      </div>
+      <div class="issue-description row">
+        <%= issue.description %>
+      </div>
+      <div class="issue-timestamp row">
+        <small>(<%= issue.created_at.strftime('Posted %I:%M %p on %b %d, %Y') %>)</small>
+      </div>
+    </div>
+
+    <div class="issue-text col-lg-2">
+      <%= image_tag(issue.photo, :height => 128, :width => 128, :class => 'pull-right') %>
+    </div>
+  </div>
+<% end %>

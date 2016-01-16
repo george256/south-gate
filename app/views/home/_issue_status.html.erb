@@ -1,0 +1,16 @@
+<% if issue.status == 0 %>
+  <div class="status-circle status-yellow"></div>
+  <div class="text-center"><small>Pending</small></div>
+<% elsif issue.status == 1 %>
+  <div class="status-circle status-green"></div>
+  <div class="text-center"><small>In Progress</small></div>
+<% elsif issue.status == 2 %>
+  <div class="status-circle status-blue"></div>
+  <div class="text-center"><small>Complete</small></div>
+<% elsif issue.status == 3 %>
+  <div class="status-circle status-red"></div>
+  <div class="text-center"><small>Failed</small></div>
+<% elsif issue.status == 4 %>
+  <div class="status-circle status-purple"></div>
+  <div class="text-center"><small>Paused</small></div>
+<% end %>
