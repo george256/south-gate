@@ -1,5 +1,5 @@
 .main-box {
-  border: 1px solid #DDDDDD;
+  border: 1px solid #BCE8F1;
   padding: 32px 32px 32px 16px;
   border-radius: 0 12px 12px 12px;
   height: 80vh;
@@ -10,9 +10,15 @@
 }
 
 .nav-tabs > li > a {
+  border-color: #BCE8F1 !important;
   border-radius: 8px 8px 0 0;
   background-color: #DBEDEF;
   border-width: 1px;
+  border-bottom: 0 !important;
+}
+
+.nav-tabs > li > a:hover {
+  background-color: #DBEDEF;
 }
 
 div.issue-entry {

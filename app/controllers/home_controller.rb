@@ -3,6 +3,7 @@ class HomeController < ApplicationController
 
   def index
     @all_issues = Issue.all
+    @all_issues_sorted = Issue.order('issues.created_at DESC')
 
     @json  = Gmaps4rails.build_markers(@all_issues) do |issue, marker|
       marker.lat issue.latitude

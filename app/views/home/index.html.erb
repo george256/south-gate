@@ -4,7 +4,7 @@
 
 <div class="container margin-top-2">
   <ul class="nav nav-tabs" role="tablist">
-    <li role="presentation" class="active"><a href="#popular-issues" aria-controls="popular-issues" role="tab" data-toggle="tab">Popular</a></li>
+    <li role="presentation" class="active"><a href="#featued-issues" aria-controls="featued-issues" role="tab" data-toggle="tab">Featured</a></li>
     <li role="presentation"><a href="#new-issues" aria-controls="profile" role="new-issues" data-toggle="tab">New</a></li>
     <li role="presentation"><a href="#all-issues" aria-controls="messages" role="all-issues" data-toggle="tab">All</a></li>
   </ul>
@@ -12,12 +12,12 @@
   <div class="main-box">
 
     <div class="tab-content">
-      <div role="tabpanel" class="tab-pane active" id="popular-issues">
-        <%= render 'issues' %>
+      <div role="tabpanel" class="tab-pane active" id="featued-issues">
+        <%= render 'issues', :all_issues => @all_issues %>
       </div>
 
       <div role="tabpanel" class="tab-pane" id="new-issues">
-        ...
+        <%= render 'issues', :all_issues => @all_issues_sorted %>
       </div>
 
       <div role="tabpanel" class="tab-pane" id="all-issues">
