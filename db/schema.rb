@@ -16,9 +16,11 @@ ActiveRecord::Schema.define(version: 20160116065050) do
   create_table "issues", force: true do |t|
     t.string   "description"
     t.string   "location_description"
-    t.string   "avatar"
+    t.string   "photo"
     t.boolean  "approved",             default: false
-    t.integer  "status"
+    t.integer  "status",               default: 0
+    t.decimal  "latitude"
+    t.decimal  "longitude"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

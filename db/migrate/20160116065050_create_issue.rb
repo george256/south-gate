@@ -3,9 +3,11 @@ class CreateIssue < ActiveRecord::Migration
     create_table :issues do |t|
       t.string :description
       t.string :location_description
-      t.string :avatar
+      t.string :photo
       t.boolean :approved, default: false
-      t.integer :status
+      t.integer :status, default: 'APPROVAL_PENDING'
+      t.decimal :latitude
+      t.decimal :longitude
       t.timestamps
     end
   end
