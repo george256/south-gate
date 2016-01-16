@@ -1,0 +1,11 @@
+<% if issue.status == 0 %>
+  <div class="status-circle status-yellow pull-left"></div><span class="issue-detail-status-label">Status: Pending</span>
+<% elsif issue.status == 1 %>
+  <div class="status-circle status-green pull-left"></div><span class="issue-detail-status-label">Status: In Progress</span>
+<% elsif issue.status == 2 %>
+  <div class="status-circle status-blue pull-left"></div><span class="issue-detail-status-label">Status: Completed</span>
+<% elsif issue.status == 3 %>
+  <div class="status-circle status-red pull-left"></div><span class="issue-detail-status-label">Status: Failed</span>
+<% elsif issue.status == 4 %>
+  <div class="status-circle status-purple pull-left"></div><span class="issue-detail-status-label">Status: Paused</span>
+<% end %>

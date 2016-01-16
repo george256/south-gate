@@ -45,11 +45,14 @@ div.issue-entry {
 }
 
 .status-circle {
-  margin: 0 auto;
-  margin-top: 32px;
   border-radius: 50%;
   width: 32px;
   height: 32px;
+}
+
+.status-circle-aligned {
+  margin: 0 auto;
+  margin-top: 32px;
 }
 
 .status-yellow {
@@ -70,4 +73,19 @@ div.issue-entry {
 
 .status-purple {
   background-color: #970079;
+}
+
+.issue-detail {
+  margin: 32px;
+}
+
+.issue-detail-description {
+  font-style: italic;
+  margin: 16px 0 24px 0;
+}
+
+.issue-detail-status-label {
+  margin-left: 16px;
+  font-size: 18px;
+  line-height: 32px;
 }
