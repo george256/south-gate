@@ -2,11 +2,18 @@
 
 South Gate WeHack 2016
 
+
 George Li
+
 Evan Campbell
 
+
 Ruby 2.1.6
+
 Rails 4.0.0
+
 Windows OS
+
 SQLite DB
+
 Currently being deployed locally only
