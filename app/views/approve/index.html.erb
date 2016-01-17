@@ -1,0 +1,15 @@
+<div class="container margin-top-2">
+  <div class="main-box">
+    <% if admin_signed_in? %>
+      <div class="row">
+        <div class="page-header">
+          <h3>Awaiting Approval</h3>
+        </div>
+        <%= render 'shared/issues', :all_issues => @paginated_awaiting_issues %>
+        <%= will_paginate @paginated_awaiting_issues, renderer: BootstrapPagination::Rails %>
+      </div>
+    <% else %>
+      Please sign in as an admin.
+    <% end %>
+  </div>
+</div>

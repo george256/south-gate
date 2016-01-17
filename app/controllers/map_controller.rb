@@ -16,6 +16,8 @@ class MapController < ApplicationController
         marker_image_url = '/images/markers/red.png'
       elsif issue.status == 4
         marker_image_url = '/images/markers/purple.png'
+      elsif issue.status == 5
+        marker_image_url = '/images/markers/gray.png'
       end
 
       if !issue.latitude.nil? && !issue.longitude.nil?
@@ -27,7 +29,6 @@ class MapController < ApplicationController
                            :width  => 32,
                            :height => 32
                        })
-        marker.title 'i\'m the title'
         marker.json({ :id => issue.id })
       end
     end

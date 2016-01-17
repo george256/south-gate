@@ -1,3 +1,7 @@
+html {
+  overflow-y: scroll;
+}
+
 .main-box {
   padding: 32px 32px 32px 16px;
   height: 80vh;
@@ -79,6 +83,10 @@ div.issue-entry {
   background-color: #970079;
 }
 
+.status-gray {
+  background-color: #A4A4A4;
+}
+
 .issue-detail {
   margin: 32px;
 }
@@ -120,4 +128,9 @@ div.marker-window {
 
 #img-preview {
   margin-bottom: 20px;
+  width: 200px;
+}
+
+.well-title {
+  margin-bottom: 48px;
 }

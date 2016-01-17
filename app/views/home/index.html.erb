@@ -2,8 +2,8 @@
   <div class="main-box">
     <% if !admin_signed_in? %>
       <div class="row">
-        <div class="pull-right">
-          <%= button_to('+ Report an Issue', new_issue_url, :method => :get, :class => 'btn btn-warning') %>
+        <div class="text-center">
+          <%= button_to('+ Report an Issue', new_issue_url, :method => :get, :class => 'btn btn-lg btn-warning') %>
         </div>
       </div>
     <% end %>
@@ -11,7 +11,7 @@
       <div class="page-header">
         <h3>All Issues</h3>
       </div>
-      <%= render 'issues', :all_issues => @paginated_issues %>
+      <%= render 'shared/issues', :all_issues => @paginated_issues %>
       <%= will_paginate @paginated_issues, renderer: BootstrapPagination::Rails %>
     </div>
   </div>

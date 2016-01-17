@@ -5,7 +5,18 @@
 <div class="container margin-top-2">
   <div class="panel panel-info">
     <div class="panel-heading">
-      <h3 class="panel-title"><i class="fa fa-flag"></i><strong> <%= @issue.title %></strong></h3>
+      </i><strong><i class="fa fa-flag"></i> <%= @issue.title %></strong>
+      <% if @issue.approved? %>
+        <% if admin_signed_in? %>
+          <%= link_to(edit_issue_url) do %>
+            <span class="panel-title pull-right"><i class="fa fa-cogs"></i><strong> edit</strong></span>
+          <% end %>
+        <% end %>
+      <% else %>
+        <%= link_to(edit_issue_url) do %>
+          <span class="panel-title pull-right"><i class="fa fa-check-square-o"></i><strong> approve</strong></span>
+        <% end %>
+      <% end %>
     </div>
     <div class="panel-body padding">
       <div class="issue-detail">

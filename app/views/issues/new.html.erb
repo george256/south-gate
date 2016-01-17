@@ -1,54 +1,66 @@
-<%= form_for @issue, :html => {:class => "form-horizontal center"} do |f| %>
-  <div class="container">
-    <div class="page-header">
-      <h3>Report a New Issue</h3>
-    </div>
+<div class="container">
+  <div class="well">
+    <%= form_for @issue, :html => {:class => "form-horizontal center"} do |f| %>
+        <div class="well-title"><h3>Report a New Issue</h3></div>
 
-    <div class="form-group">
-      <%= f.label :description, :class => 'control-label col-sm-2' %>
-      <div class="col-sm-10">
-        <%= f.text_field :description, :class => 'form-control', :placeholder => 'Enter description', :type => 'text' %>
-      </div>
-    </div>
-
-    <div class="form-group">
-      <%= f.label "Location", :class => 'control-label col-sm-2' %>
-      <div class="col-sm-10">
-        <%= f.text_field :location_description, :class => 'form-control', :placeholder => 'Describe location', :type => 'text' %>
-      </div>
-    </div>
-
-    <div class="form-group">
-      <%= f.label "Coordinates", :class => 'control-label col-sm-2' %>
-      <div class="col-sm-5">
-        <%= f.text_field :latitude, :class => 'form-control', :placeholder => 'Latitude', :type => 'text' %>
-      </div>
-      <div class="col-sm-5">
-        <%= f.text_field :longitude, :class => 'form-control', :placeholder => 'Longitude', :type => 'text' %>
-      </div>
-    </div>
-
-    <div class="form-group">
-      <%= f.label "Add a Photo", :class => 'control-label col-sm-2' %>
-      <div class="col-sm-5">
-        <div class="img-preview-box"><img id="img-preview" src="" /></div>
-        <div class="btn btn-sm btn-default btn-file">
-          Choose File...<%= f.file_field :photo, :onchange => 'readURL(this)' %>
+        <div class="form-group">
+          <%= f.label :title, :class => 'control-label col-sm-2' %>
+          <div class="col-sm-10">
+            <%= f.text_field :title, :class => 'form-control', :placeholder => 'Briefly describe the issue in a few words (e.g. Street flooding when it rains)', :type => 'text' %>
+          </div>
         </div>
-      </div>
-    </div>
 
-    <div class="form-group">
-      <div class="col-sm-offset-2 col-sm-10">
-        <span class="pull-right">
-          <%= f.submit 'Submit', :type => 'submit', :class => 'btn btn-lg btn-info' %>
-        </span>
-      </div>
-    </div>
+        <div class="form-group">
+          <%= f.label "Location", :class => 'control-label col-sm-2' %>
+          <div class="col-sm-10">
+            <%= f.text_area :location_description, :class => 'form-control', :placeholder => 'Describe where the issue is (e.g. Corner of North Pass Ave and Magnolia St in Burbank)', :type => 'text' %>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <%= f.label :description, :class => 'control-label col-sm-2' %>
+          <div class="col-sm-10">
+            <%= f.text_area :description, :class => 'form-control', :placeholder => 'Give any additional details (e.g. The rainwater is flooding the corner of the street because of poor drainage. This causes a lot of cars to get trapped in the water when they try to turn the corner.)', :type => 'text' %>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <%= f.label "Coordinates", :class => 'control-label col-sm-2' %>
+          <div class="col-sm-5">
+            <%= f.text_field :latitude, :class => 'form-control', :placeholder => 'Latitude', :type => 'text' %>
+          </div>
+          <div class="col-sm-5">
+            <%= f.text_field :longitude, :class => 'form-control', :placeholder => 'Longitude', :type => 'text' %>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <%= f.label "Add a photo", :class => 'control-label col-sm-2' %>
+          <div class="col-sm-5">
+            <div class="img-preview-box"><img id="img-preview" src="" /></div>
+            <div class="btn btn-sm btn-default btn-file">
+              Choose File...<%= f.file_field :photo, :onchange => 'readURL(this)' %>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <div class="col-sm-offset-2 col-sm-10">
+            <span class="pull-right">
+              <%= f.submit 'Submit', :type => 'submit', :class => 'btn btn-lg btn-info' %>
+            </span>
+          </div>
+        </div>
+
+    <% end %>
   </div>
-<% end %>
+</div>
 
 <script>
+  $( document ).ready(function() {
+    $('#img-preview').hide();
+  });
+
   function readURL(input) {
     if (input.files && input.files[0]) {
       $('#img-preview').show();

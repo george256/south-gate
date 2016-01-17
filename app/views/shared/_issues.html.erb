@@ -1,7 +1,7 @@
 <% all_issues.each do |issue| %>
   <div class="issue-entry row">
     <div class="col-lg-1">
-      <%= render 'issue_status', :issue => issue %>
+      <%= render 'shared/issue_status', :issue => issue %>
     </div>
     <div class="issue-text col-lg-9">
       <div class="issue-title row">

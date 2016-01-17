@@ -9,8 +9,10 @@
   <div class="text-center"><small>Completed</small></div>
 <% elsif issue.status == 3 %>
   <div class="status-circle status-red status-circle-aligned"></div>
-  <div class="text-center"><small>Cancelled</small></div>
+  <div class="text-center"><small>Declined</small></div>
 <% elsif issue.status == 4 %>
   <div class="status-circle status-purple status-circle-aligned"></div>
   <div class="text-center"><small>Paused</small></div>
+<% elsif issue.status == 5 %>
+  <div class="status-circle status-gray status-circle-aligned"></div>
 <% end %>
