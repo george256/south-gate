@@ -5,7 +5,7 @@
 <div class="container margin-top-2">
   <div class="panel panel-info">
     <div class="panel-heading">
-      <h3 class="panel-title"><strong><%= @issue.title %></strong></h3>
+      <h3 class="panel-title"><i class="fa fa-flag"></i><strong> <%= @issue.title %></strong></h3>
     </div>
     <div class="panel-body padding">
       <div class="issue-detail">
@@ -18,7 +18,7 @@
         <div class="row">
           <div class="col-lg-6">
             <div class="panel panel-default">
-              <div class="panel-heading">Photo</div>
+              <div class="panel-heading"><i class="fa fa-picture-o"></i> Photo</div>
               <div class="panel-body">
                 <%= image_tag(@issue.photo, :width => 476, :class => "text-center") %>
               </div>
@@ -26,7 +26,7 @@
           </div>
           <div class="col-lg-6">
             <div class="panel panel-default">
-              <div class="panel-heading">Location</div>
+              <div class="panel-heading"><i class="fa fa-map-marker"></i> Location</div>
               <div class="panel-body">
                 <div style='width: 476px;'>
                   <div id="map" style='width: 476px; height: 480px;'></div>

@@ -14,9 +14,9 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <form class="navbar-form navbar-left" role="search">
         <div class="form-group">
-          <input type="text" class="form-control" placeholder="Search">
+          <input type="text" class="form-control" placeholder="Find an Issue...">
         </div>
-        <button type="submit" class="btn btn-default">Submit</button>
+        <button type="submit" class="btn btn-default"><i class="fa fa-search"></i> Search</button>
       </form>
       <ul class="nav navbar-nav navbar-right">
         <% if admin_signed_in? %><li><%= link_to "Approve Issues", 'approve#index' %></li><% end %>
