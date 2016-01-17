@@ -8,12 +8,12 @@
       </i><strong><i class="fa fa-flag"></i> <%= @issue.title %></strong>
       <% if @issue.approved? %>
         <% if admin_signed_in? %>
-          <%= link_to(edit_issue_url) do %>
+          <%= link_to(edit_issue_path(@issue.id)) do %>
             <span class="panel-title pull-right"><i class="fa fa-cogs"></i><strong> edit</strong></span>
           <% end %>
         <% end %>
       <% else %>
-        <%= link_to(edit_issue_url) do %>
+        <%= link_to(edit_issue_path(@issue.id)) do %>
           <span class="panel-title pull-right"><i class="fa fa-check-square-o"></i><strong> approve</strong></span>
         <% end %>
       <% end %>

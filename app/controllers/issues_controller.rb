@@ -29,7 +29,7 @@ class IssuesController < ApplicationController
   def create
     @issue = Issue.new(issue_params)
     if @issue.save
-      render 'show'
+      render 'show', :id => @issue.id
     else
       render 'new'
     end
