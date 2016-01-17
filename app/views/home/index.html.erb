@@ -1,10 +1,12 @@
 <div class="container margin-top-2">
   <div class="main-box">
-    <div class="row">
-      <div class="pull-right">
-        <%= button_to('+ Report an Issue', new_issue_url, :method => :get, :class => 'btn btn-warning') %>
+    <% if !admin_signed_in? %>
+      <div class="row">
+        <div class="pull-right">
+          <%= button_to('+ Report an Issue', new_issue_url, :method => :get, :class => 'btn btn-warning') %>
+        </div>
       </div>
-    </div>
+    <% end %>
     <div class="row">
       <div class="page-header">
         <h3>All Issues</h3>
