@@ -7,7 +7,7 @@ class CreateIssue < ActiveRecord::Migration
       t.string :location_description
       t.string :photo
       t.boolean :approved, default: false
-      t.integer :status, default: 'APPROVAL_PENDING'
+      t.integer :status, default: 5
       t.decimal :latitude
       t.decimal :longitude
       t.timestamps

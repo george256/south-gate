@@ -24,6 +24,13 @@
         </div>
 
         <div class="form-group">
+          <%= f.label "Location", :class => 'control-label col-sm-2' %>
+          <div class="col-sm-10">
+            <%= @issue.location_description %>
+          </div>
+        </div>
+
+        <div class="form-group">
           <%= f.label :description, :class => 'control-label col-sm-2' %>
           <div class="col-sm-10">
             <%= f.text_area :description, :class => 'form-control', :type => 'text' %>
@@ -43,7 +50,11 @@
         <div class="form-group">
           <%= f.label "Coordinates", :class => 'control-label col-sm-2' %>
           <div class="col-sm-5">
-            <%= f.gmap_coordinate_picker :lat_column => 'latitude', :lng_column => 'longitude' , :zoom_level => 14, :default_coordinates => [@issue.latitude, @issue.longitude]  %>
+            <% if !@issue.latitude.nil? && !@issue.longitude.nil? %>
+              <%= f.gmap_coordinate_picker :lat_column => 'latitude', :lng_column => 'longitude' , :zoom_level => 14, :default_coordinates => [@issue.latitude, @issue.longitude]  %>
+            <% else %>
+              <%= f.gmap_coordinate_picker :lat_column => 'latitude', :lng_column => 'longitude' , :zoom_level => 14, :default_coordinates => ['33.948695', '-118.191237']  %>
+            <% end %>
           </div>
         </div>
 

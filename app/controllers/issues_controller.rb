@@ -28,8 +28,9 @@ class IssuesController < ApplicationController
 
   def create
     @issue = Issue.new(issue_params)
+    @issue.status = 5
     if @issue.save
-      render 'show', :id => @issue.id
+      redirect_to @issue
     else
       render 'new'
     end

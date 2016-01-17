@@ -1,7 +1,7 @@
 class MapController < ApplicationController
 
   def index
-    @issues_with_coords = Issue.all.where('latitude IS NOT NULL')
+    @issues_with_coords = Issue.all.where('latitude IS NOT NULL and longitude IS NOT NULL and status != 3 and status != 5')
 
     @json  = Gmaps4rails.build_markers(@issues_with_coords) do |issue, marker|
       marker_image_url = ''
@@ -20,17 +20,15 @@ class MapController < ApplicationController
         marker_image_url = '/images/markers/gray.png'
       end
 
-      if !issue.latitude.nil? && !issue.longitude.nil?
-        marker.lat issue.latitude
-        marker.lng issue.longitude
-        marker.infowindow render_to_string(:partial => "marker_window", :locals => {:issue => issue})
-        marker.picture({
-                           :url    => marker_image_url,
-                           :width  => 32,
-                           :height => 32
-                       })
-        marker.json({ :id => issue.id })
-      end
+      marker.lat issue.latitude
+      marker.lng issue.longitude
+      marker.infowindow render_to_string(:partial => "marker_window", :locals => {:issue => issue})
+      marker.picture({
+                         :url    => marker_image_url,
+                         :width  => 32,
+                         :height => 32
+                     })
+      marker.json({ :id => issue.id })
     end
   end
 
