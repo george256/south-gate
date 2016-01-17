@@ -1,0 +1,5 @@
+<div class="marker-window">
+  <div><strong><%= issue.title %></strong></div>
+  <div><%= truncate(issue.description, length: 120) %></div>
+  <div><%= link_to 'view details', issue_path(issue.id) %></div>
+</div>

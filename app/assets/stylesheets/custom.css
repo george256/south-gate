@@ -93,3 +93,7 @@ div.issue-entry {
   font-size: 18px;
   line-height: 32px;
 }
+
+div.marker-window {
+  width: 250px;
+}
