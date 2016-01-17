@@ -1,6 +1,8 @@
 <%= form_for @issue, :html => {:class => "form-horizontal center"} do |f| %>
   <div class="container">
-    <h2>Create a new issue</h2>
+    <div class="page-header">
+      <h3>Report a New Issue</h3>
+    </div>
 
     <div class="form-group">
       <%= f.label :description, :class => 'control-label col-sm-2' %>
@@ -29,14 +31,38 @@
     <div class="form-group">
       <%= f.label "Add a Photo", :class => 'control-label col-sm-2' %>
       <div class="col-sm-5">
-        <%= f.file_field :photo %>
+        <div class="img-preview-box"><img id="img-preview" src="" /></div>
+        <div class="btn btn-sm btn-default btn-file">
+          Choose File...<%= f.file_field :photo, :onchange => 'readURL(this)' %>
+        </div>
       </div>
     </div>
 
     <div class="form-group">
       <div class="col-sm-offset-2 col-sm-10">
-        <%= f.submit 'Create issue', :type => 'submit', :class => 'btn btn-default' %>
+        <span class="pull-right">
+          <%= f.submit 'Submit', :type => 'submit', :class => 'btn btn-lg btn-info' %>
+        </span>
       </div>
     </div>
   </div>
 <% end %>
+
+<script>
+  function readURL(input) {
+    if (input.files && input.files[0]) {
+      $('#img-preview').show();
+      var reader = new FileReader();
+
+      reader.onload = function (e) {
+        $('#img-preview')
+            .attr('src', e.target.result)
+            .width(200)
+      };
+
+      reader.readAsDataURL(input.files[0]);
+    } else {
+      $('#img-preview').hide();
+    }
+  }
+</script>
