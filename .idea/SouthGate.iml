@@ -156,6 +156,8 @@
     <orderEntry type="library" scope="PROVIDED" name="tzinfo (v0.3.46, ruby-2.1.6-p336) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="uglifier (v2.7.2, ruby-2.1.6-p336) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="underscore-rails (v1.8.3, ruby-2.1.6-p336) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="will_paginate (v3.0.7, ruby-2.1.6-p336) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="will_paginate-bootstrap (v1.0.1, ruby-2.1.6-p336) [gem]" level="application" />
   </component>
   <component name="RModuleSettingsStorage">
     <LOAD_PATH number="0" />
